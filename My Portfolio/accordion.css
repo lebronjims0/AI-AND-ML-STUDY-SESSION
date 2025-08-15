@@ -1,0 +1,86 @@
+
+.ui_accordion{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    height: 450px;
+    margin-top: 80px;
+    gap: 16px;
+    transition: 0.3s;
+}
+.ui_accordion:hover{
+    gap: 0;
+}
+.ui_accordion li{
+    position: relative;
+    overflow: hidden;
+    flex: 0 0 80px;
+    border-radius: 50px;
+    opacity: 0.75;
+    cursor: pointer;
+}
+.ui_accordion li:hover{
+    flex: 0 1 260px;
+    scale: 1.1px;
+    z-index: 10;
+    opacity: 1;
+}
+.ui_accordion li img{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    translate: -50% -50%;
+    height: 100%;
+    object-fit: cover;
+    filter: grayscale(0.1);
+}
+.ui_accordion li .content{
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1;
+    color: white;
+    padding: 15px;
+    background: linear-gradient(0deg, rgb(0 0 0/70%)10%rgb(255 255 255/0%) 100%);
+    opacity: 0;
+    visibility: hidden;
+}
+.ui_accordion li .content span{
+    position: absolute;
+    z-index: 3;
+    left: 50%;
+    bottom: 50px;
+    translate: -50%;
+    scale: 0.85;
+    opacity: 0;
+    visibility: hidden;
+}
+.content h2{
+    font-weight: 500;
+    font-size: 25px;
+    line-height: 45px;
+    border-bottom: 2px solid #fff;
+    margin-bottom: 10px;
+    white-space: nowrap;
+}
+.content p{
+    letter-spacing: 2px;
+}
+.ui_accordion li:hover .content{
+    opacity: 1;
+    visibility: visible;
+
+}
+.ui_accordion li:hover span{
+    scale: 1;
+    opacity: 1;
+    visibility: visible;
+}
+.ui_accordion li,
+.ui_accordion li img,
+.ui_accordion li .content,
+.ui_accordion li .content span{
+    transition: 0.3s;
+}
